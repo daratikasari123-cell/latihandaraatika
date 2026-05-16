@@ -1,0 +1,152 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --primary: #1f78d1;
+  --primary-dark: #165d9b;
+  --text: #1f2937;
+  --muted: #52606d;
+  --accent: #f3a537;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.brand p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid #cbd5e1;
+  background: var(--surface);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+
+.hero {
+  padding: 5rem 0 3rem;
+  background: radial-gradient(circle at top left, rgba(31, 120, 209, 0.18), transparent 45%),
+    linear-gradient(180deg, #ffffff 0%, #ecf2fb 100%);
+}
+
+.hero h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+.button {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.content-section {
+  padding: 3rem 0;
+}
+
+.content-section h3 {
+  margin-top: 0;
+  font-size: 1.75rem;
+}
+
+.content-section p,
+.content-section li {
+  color: var(--muted);
+}
+
+.content-section ol,
+.content-section ul {
+  margin: 1rem 0 0 1.25rem;
+  color: var(--muted);
+}
+
+.site-footer {
+  background: var(--surface);
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top: 1px solid #e2e8f0;
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .site-nav.active {
+    display: flex;
+  }
+}
